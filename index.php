@@ -1,5 +1,5 @@
 <?php
-  define('TITLE', 'My Profile');
+  define('TITLE', 'Rapid Bus');
   //header
 	require ('header.php');
 	echo "<main class='page-content' style='display: flex; flex-direction: row;'>";
@@ -19,7 +19,13 @@
               echo "<div class='caption'>";
                 echo "<h4>PREMIUM</h4>";
                 echo "<p>40 seats per bus</p>";
-                echo "<div class='h4 price'>15.00/seat</div><a href='userlogin.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+                echo "<div class='h4 price'>15.00/seat</div>"
+		if (isset($_SESSION['id'])) {
+			echo "<a href='booking.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+		}
+		else {
+			echo "<a href='userlogin.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+		}
                 echo "</div>";
               echo "</div>";
             echo "</div>";
@@ -29,7 +35,13 @@
                 echo "<div class='caption'>";
                   echo "<h4>NORMAL</h4>";
                   echo "<p>45 seats per bus</p>";
-                  echo "<div class='h4 price'>10.00/seat</div><a href='userlogin.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+                  echo "<div class='h4 price'>10.00/seat</div>";
+		if (isset($_SESSION['id'])) {
+			echo "<a href='booking.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+		}
+		else {
+			echo "<a href='userlogin.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+		}
                 echo "</div>";
               echo "</div>";
             echo "</div>";
@@ -39,7 +51,13 @@
                 echo "<div class='caption'>";
                   echo "<h4>RAPID</h4>";
                   echo "<p>45 seats per bus</p>";
-                  echo "<div class='h4 price'>18.00/seat</div><a href='userlogin.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+                  echo "<div class='h4 price'>18.00/seat</div>";
+		if (isset($_SESSION['id'])) {
+			echo "<a href='booking.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+		}
+		else {
+			echo "<a href='userlogin.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
+		}
                 echo "</div>";
               echo "</div>";
             echo "</div>";
