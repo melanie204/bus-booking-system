@@ -13,7 +13,7 @@
 	echo "</div>";
 	echo "<div class='shell'>";
 	//title
-	echo "<h1 class='txt-white'>DELETE SCHEDULE</h1>";
+	echo "<h1 class='txt-white'>DELETE BUS</h1>";
 	echo "<div class='range'>";
 	echo "<div class='cell-lg-8 cell-lg-preffix-2'>";
 	echo "<section class='section-71 section-bottom-80'>";
