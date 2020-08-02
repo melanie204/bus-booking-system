@@ -19,7 +19,7 @@
               echo "<div class='caption'>";
                 echo "<h4>PREMIUM</h4>";
                 echo "<p>40 seats per bus</p>";
-                echo "<div class='h4 price'>15.00/seat</div>"
+                echo "<div class='h4 price'>15.00/seat</div>";
 		if (isset($_SESSION['id'])) {
 			echo "<a href='booking.php' data-text='book now!' class='btn btn-winona btn-transparent btn-xs'>book now!</a>";
 		}
