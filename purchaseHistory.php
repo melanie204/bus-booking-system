@@ -15,20 +15,6 @@
 	echo "<div class='profile-content' style='padding: 30px 20px 25px 20px; width: 80%; background-color: #f1f1f1;'>";
 	//title
 	echo "<h2>PURCHASE HISTORY</h2><br/>";
-	echo "<div class='table-bordered'>";
-	echo "<center>";
-	echo "<table width='925'>";
-	//table header
-	echo "<tr>";
-		echo "<th>Order ID</th>";
-		echo "<th width='140px'>Depart From</th>";
-		echo "<th width='140px'>Arrive At</th>";
-		echo "<th>No. of Children</th>";
-		echo "<th>No. of Adults</th>";
-		echo "<th>No. of Senior Citizens</th>";
-		echo "<th>Bus ID</th>";
-		echo "<th>Total Payment (RM)</th>";
-	echo "</tr>";
 
 	//connect to database
 	include ('dbcon.php');
@@ -44,7 +30,22 @@
 
 	//if there is data in the database
 	while($row=mysqli_fetch_assoc($result)){
-		//table content fetch from the database
+		if ($count == 0) {
+			echo "<div class='table-bordered'>";
+			echo "<center>";
+			echo "<table width='925'>";
+			//table header
+			echo "<tr>";
+			echo "<th>Order ID</th>";
+			echo "<th width='140px'>Depart From</th>";
+			echo "<th width='140px'>Arrive At</th>";
+			echo "<th>No. of Children</th>";
+			echo "<th>No. of Adults</th>";
+			echo "<th>No. of Senior Citizens</th>";
+			echo "<th>Bus ID</th>";
+			echo "<th>Total Payment (RM)</th>";
+			echo "</tr>";
+		}
 		
 		if ($count % 2 == 0) {
 			echo "<tr style='background-color: #ccc;'>";
@@ -65,9 +66,17 @@
 		
 		$count++;
 	}   
-	echo "</table>";
-	echo "</center>";
-	echo "</div>";
+	
+	if ($count > 0) {
+		echo "</table>";
+		echo "</center>";
+		echo "</div>";	
+	}
+	else {
+		echo "<p>It seems you have not made any purchases yet...</p>";
+		echo "<p>Click <a href='booking.php'>here</a> to start your first purchase!</p>";
+	}
+	
 	echo "</div>";
 	echo "</main>";
 	mysqli_close($con);
